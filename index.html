@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+ index.html
+
+ HTML Mail Helper main file
+
+ Copyright © 2025, philippe@croue.com,
+ all rights reserved under MIT licence.
+ See LICENCE file for more informations.
+-->
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="HTML Mail Helper is a tool created to help writing mails with predefined phrases." />
+<link type="image/png" rel="shortcut icon" href="./lib/favicon.png">
+<link type="text/css" rel="stylesheet" href="./lib/styles.css">
+<title>HTML Mail Helper</title>
+</head>
+<body onload="init()">
+  <tools>
+    <logo></logo>
+    <reset onclick="resetInputs()"></reset>
+    <line>
+      <div>
+        <input type="text" id="order" size="20" />
+      </div>
+      <div>
+        <input type="text" id="email" size="20" />
+      </div>
+      <div>
+        <input type="text" id="civility" list="civilities" />
+        <datalist id="civilities"></datalist>
+      </div>
+      <div>
+        <input type="text" id="firstname" size="20" />
+      </div>
+      <div>
+        <input type="text" id="lastname" size="20" />
+      </div>
+    </line>
+    <line>
+      <div>
+        <input type="text" id="family" list="families" />
+        <datalist id="families"></datalist>
+      </div>
+      <div>
+        <input type="text" id="category" list="categories" />
+        <datalist id="categories"></datalist>
+      </div>
+      <div>
+        <input type="text" id="search" />
+      </div>
+    </line>
+  </tools>
+  <div id="root"></div>
+  <result>
+    <content></content>
+    <copy></copy>
+    <erase></erase>
+  </result>
+  <script type="text/javascript" src="./lib/app.js"></script>
+  <script type="text/javascript" src="./lib/config.js"></script>
+  <script type="text/javascript" src="./lib/data.js"></script>
+  <script type="text/javascript" src="./lib/scripts.js"></script>
+</body>
+</html>
