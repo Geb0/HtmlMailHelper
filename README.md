@@ -19,9 +19,12 @@ Manage the content of the `lib/data.js` file to set your prefered phrases respec
 - Set the phrase title in the `title` property.
 - Set the phrase text in the `text` property. You can use some tags to insert dynamic datas:
   * `{agent}` to insert the agent name in the phrase
+  * `{family}` to insert the family name in the phrase
+  * `{category}` to insert the category name in the phrase
   * `{order}` to insert the order number in the phrase
   * `{civility}` to insert the customer civility in the phrase
   * `{email}` to insert the customer e-mail in the phrase
+  * `{phone}` to insert the customer phone number in the phrase
   * `{firstname}` to insert the customer first name in the phrase
   * `{lastname}` to insert the customer last name in the phrase
 
@@ -84,9 +87,12 @@ Modifier le contenu du fichier `lib/data.js` pour définir vos propres phrases. 
 - Définir le titre de la phrase dans la propriété `title`.
 - Définir la phrase dans la propriété `text`. Vous pouvez utiliser différentes balises pour intégrer des informations:
   * `{agent}` pour ajouter le nom de l'agent dans la phrase
+  * `{family}` pour ajouter le nom de la famille dans la phrase
+  * `{category}` pour ajouter le nom de la catégorie dans la phrase
   * `{order}` pour ajouter le numéro de commande dans la phrase
   * `{civility}` pour ajouter la civilité du client dans la phrase
   * `{email}` pour ajouter l'adresse e-mail du client dans la phrase
+  * `{phone}` pour ajouter le numéro de téléphone du client dans la phrase
   * `{firstname}` pour ajouter le prénom du client dans la phrase
   * `{lastname}` pour ajouter le nom du client dans la phrase
 
