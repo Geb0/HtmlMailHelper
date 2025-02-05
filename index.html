@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--
+ index.html
+
+ HTML Mail Helper main file
+
+ Copyright © 2025, philippe@croue.com,
+ all rights reserved under MIT licence.
+ See LICENCE file for more informations.
+-->
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="HTML Mail Helper is a tool created to help writing mails with predefined phrases." />
+<link type="image/png" rel="shortcut icon" href="./lib/favicon.png">
+<link type="text/css" rel="stylesheet" href="./lib/styles.css">
+<title>HTML Mail Helper</title>
+</head>
+<body onload="init()">
+  <tools>
+    <logo>
+      <svg version="1.2" viewBox="0 0 16000 16000" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xml:space="preserve">
+       <defs class="ClipPathGroup">
+        <clipPath id="presentation_clip_path" clipPathUnits="userSpaceOnUse">
+         <rect x="0" y="0" width="16000" height="16000"/>
+        </clipPath>
+        <clipPath id="presentation_clip_path_shrink" clipPathUnits="userSpaceOnUse">
+         <rect x="16" y="16" width="15968" height="15968"/>
+        </clipPath>
+       </defs>
+       <defs class="TextShapeIndex">
+        <g ooo:slide="id1" ooo:id-list="id3 id4 id5 id6 id7"/>
+       </defs>
+       <defs class="EmbeddedBulletChars">
+        <g id="bullet-char-template-57356" transform="scale(0.00048828125,-0.00048828125)">
+         <path d="M 580,1141 L 1163,571 580,0 -4,571 580,1141 Z"/>
+        </g>
+        <g id="bullet-char-template-57354" transform="scale(0.00048828125,-0.00048828125)">
+         <path d="M 8,1128 L 1137,1128 1137,0 8,0 8,1128 Z"/>
+        </g>
+        <g id="bullet-char-template-10146" transform="scale(0.00048828125,-0.00048828125)">
+         <path d="M 174,0 L 602,739 174,1481 1456,739 174,0 Z M 1358,739 L 309,1346 659,739 1358,739 Z"/>
+        </g>
+        <g id="bullet-char-template-10132" transform="scale(0.00048828125,-0.00048828125)">
+         <path d="M 2015,739 L 1276,0 717,0 1260,543 174,543 174,936 1260,936 717,1481 1274,1481 2015,739 Z"/>
+        </g>
+        <g id="bullet-char-template-10007" transform="scale(0.00048828125,-0.00048828125)">
+         <path d="M 0,-2 C -7,14 -16,27 -25,37 L 356,567 C 262,823 215,952 215,954 215,979 228,992 255,992 264,992 276,990 289,987 310,991 331,999 354,1012 L 381,999 492,748 772,1049 836,1024 860,1049 C 881,1039 901,1025 922,1006 886,937 835,863 770,784 769,783 710,716 594,584 L 774,223 C 774,196 753,168 711,139 L 727,119 C 717,90 699,76 672,76 641,76 570,178 457,381 L 164,-76 C 142,-110 111,-127 72,-127 30,-127 9,-110 8,-76 1,-67 -2,-52 -2,-32 -2,-23 -1,-13 0,-2 Z"/>
+        </g>
+        <g id="bullet-char-template-10004" transform="scale(0.00048828125,-0.00048828125)">
+         <path d="M 285,-33 C 182,-33 111,30 74,156 52,228 41,333 41,471 41,549 55,616 82,672 116,743 169,778 240,778 293,778 328,747 346,684 L 369,508 C 377,444 397,411 428,410 L 1163,1116 C 1174,1127 1196,1133 1229,1133 1271,1133 1292,1118 1292,1087 L 1292,965 C 1292,929 1282,901 1262,881 L 442,47 C 390,-6 338,-33 285,-33 Z"/>
+        </g>
+        <g id="bullet-char-template-9679" transform="scale(0.00048828125,-0.00048828125)">
+         <path d="M 813,0 C 632,0 489,54 383,161 276,268 223,411 223,592 223,773 276,916 383,1023 489,1130 632,1184 813,1184 992,1184 1136,1130 1245,1023 1353,916 1407,772 1407,592 1407,412 1353,268 1245,161 1136,54 992,0 813,0 Z"/>
+        </g>
+        <g id="bullet-char-template-8226" transform="scale(0.00048828125,-0.00048828125)">
+         <path d="M 346,457 C 273,457 209,483 155,535 101,586 74,649 74,723 74,796 101,859 155,911 209,963 273,989 346,989 419,989 480,963 531,910 582,859 608,796 608,723 608,648 583,586 532,535 482,483 420,457 346,457 Z"/>
+        </g>
+        <g id="bullet-char-template-8211" transform="scale(0.00048828125,-0.00048828125)">
+         <path d="M -4,459 L 1135,459 1135,606 -4,606 -4,459 Z"/>
+        </g>
+        <g id="bullet-char-template-61548" transform="scale(0.00048828125,-0.00048828125)">
+         <path d="M 173,740 C 173,903 231,1043 346,1159 462,1274 601,1332 765,1332 928,1332 1067,1274 1183,1159 1299,1043 1357,903 1357,740 1357,577 1299,437 1183,322 1067,206 928,148 765,148 601,148 462,206 346,322 231,437 173,577 173,740 Z"/>
+        </g>
+       </defs>
+       <g>
+        <g id="id2" class="Master_Slide">
+         <g id="bg-id2" class="Background"/>
+         <g id="bo-id2" class="BackgroundObjects"/>
+        </g>
+       </g>
+       <g class="SlideGroup">
+        <g>
+         <g id="container-id1">
+          <g id="id1" class="Slide" clip-path="url(#presentation_clip_path)">
+           <g class="Page">
+            <g class="Group">
+             <g class="com.sun.star.drawing.ClosedBezierShape">
+              <g id="id3">
+               <rect class="BoundingBox" stroke="none" fill="none" x="263" y="602" width="14883" height="14797"/>
+               <path fill="rgb(178,178,178)" stroke="none" d="M 2464,5246 C 2386,5270 2317,5313 2263,5370 2209,5427 2171,5498 2153,5574 2136,5651 2139,5730 2163,5804 2188,5879 2231,5946 2292,5998 2351,6051 2424,6088 2502,6105 2581,6122 2663,6119 2739,6096 L 10284,3788 C 10361,3764 10430,3721 10484,3664 10539,3606 10576,3536 10594,3460 10611,3383 10608,3304 10584,3230 10559,3155 10516,3087 10455,3036 10396,2983 10323,2946 10245,2928 10166,2912 10084,2915 10008,2938 L 2464,5246 Z M 3598,7902 C 3522,7932 3457,7979 3407,8041 3358,8103 3327,8176 3315,8253 3304,8331 3314,8409 3344,8482 3374,8555 3423,8618 3487,8666 3551,8714 3626,8745 3706,8756 3785,8767 3866,8757 3941,8728 L 11276,5854 C 11351,5824 11416,5776 11466,5715 11515,5653 11547,5580 11559,5503 11570,5425 11560,5347 11530,5274 11499,5201 11450,5138 11387,5090 11323,5042 11248,5011 11168,5000 11088,4989 11008,4999 10932,5028 L 3598,7902 Z M 5156,10936 C 5084,10972 5024,11025 4981,11090 4936,11156 4911,11232 4907,11310 4903,11387 4920,11466 4957,11535 4993,11605 5048,11663 5116,11705 5183,11748 5262,11773 5342,11777 5422,11780 5502,11764 5574,11729 L 12619,8236 C 12689,8199 12751,8146 12794,8081 12838,8015 12863,7940 12868,7861 12871,7784 12854,7706 12818,7636 12781,7566 12726,7508 12658,7465 12591,7423 12513,7399 12433,7394 12352,7391 12272,7407 12201,7443 L 5156,10936 Z M 310,3916 C 24,2649 1118,2498 1740,2352 5440,1524 6578,1248 9709,696 10730,484 11273,514 11701,2076 11893,2457 13111,5361 15145,10416 12645,16742 5928,15632 4435,14600 2825,10696 2004,8558 310,3916 Z"/>
+              </g>
+             </g>
+             <g class="com.sun.star.drawing.ClosedBezierShape">
+              <g id="id4">
+               <rect class="BoundingBox" stroke="none" fill="none" x="8773" y="622" width="6965" height="10365"/>
+               <path fill="rgb(0,75,172)" stroke="none" d="M 8774,6851 C 10325,4046 10609,3515 11891,1169 12156,662 12466,397 13296,868 14157,1312 14273,1379 15325,1932 15732,2167 15823,2444 15658,2796 15039,4073 13499,6776 12418,8766 11264,9517 10082,10270 8897,10986 8837,9066 8837,8290 8774,6851 Z"/>
+              </g>
+             </g>
+             <g class="com.sun.star.drawing.CustomShape">
+              <g id="id5">
+               <rect class="BoundingBox" stroke="none" fill="none" x="10939" y="2043" width="4206" height="2550"/>
+               <path fill="rgb(204,204,204)" stroke="none" d="M 11538,2089 L 11538,2089 C 11476,2057 11405,2041 11334,2044 11263,2047 11194,2068 11133,2105 11072,2143 11022,2195 10989,2257 L 10989,2256 10989,2257 C 10955,2319 10938,2388 10940,2458 10942,2527 10962,2595 11000,2654 11037,2713 11089,2761 11152,2793 L 14545,4546 14545,4546 C 14608,4578 14678,4594 14749,4591 14821,4588 14890,4567 14951,4529 15011,4492 15061,4440 15095,4378 L 15095,4378 15095,4378 15095,4378 C 15129,4316 15146,4247 15144,4177 15142,4108 15121,4040 15084,3981 15047,3922 14994,3874 14931,3842 L 11538,2089 Z"/>
+              </g>
+             </g>
+             <g class="com.sun.star.drawing.ClosedBezierShape">
+              <g id="id6">
+               <rect class="BoundingBox" stroke="none" fill="none" x="11411" y="623" width="4328" height="3331"/>
+               <path fill="rgb(141,40,30)" stroke="none" d="M 11547,2093 C 11504,2071 11458,2057 11411,2050 11557,1784 11715,1494 11892,1170 12157,663 12467,398 13297,869 14158,1313 14274,1381 15326,1933 15733,2168 15824,2445 15659,2797 15509,3108 15303,3503 15063,3952 15027,3905 14981,3866 14927,3839 L 11547,2093 11547,2093 Z"/>
+              </g>
+             </g>
+             <g class="com.sun.star.drawing.ClosedBezierShape">
+              <g id="id7">
+               <rect class="BoundingBox" stroke="none" fill="none" x="8775" y="6852" width="3646" height="4136"/>
+               <path fill="rgb(0,0,0)" stroke="none" d="M 8775,6852 C 10173,6870 11749,7731 12419,8767 11265,9518 10083,10271 8898,10987 8838,9068 8838,8291 8775,6852 Z"/>
+              </g>
+             </g>
+            </g>
+           </g>
+          </g>
+         </g>
+        </g>
+       </g>
+      </svg>
+    </logo>
+    <reset onclick="resetInputs()">&#10008;</reset>
+    <line>
+      <div>
+        <input type="text" id="order" size="20" />
+      </div>
+      <div>
+        <input type="text" id="email" size="20" />
+      </div>
+      <div>
+        <input type="text" id="civility" list="civilities" />
+        <datalist id="civilities"></datalist>
+      </div>
+      <div>
+        <input type="text" id="firstname" size="20" />
+      </div>
+      <div>
+        <input type="text" id="lastname" size="20" />
+      </div>
+    </line>
+    <line>
+      <div>
+        <input type="text" id="family" list="families" />
+        <datalist id="families"></datalist>
+      </div>
+      <div>
+        <input type="text" id="category" list="categories" />
+        <datalist id="categories"></datalist>
+      </div>
+      <div>
+        <input type="text" id="search" />
+      </div>
+    </line>
+  </tools>
+  <div id="root"></div>
+  <result>
+    <content></content>
+    <copy>&#128203;</copy>
+    <erase>&#10008;</erase>
+  </result>
+  <script type="text/javascript" src="./lib/app.js"></script>
+  <script type="text/javascript" src="./lib/config.js"></script>
+  <script type="text/javascript" src="./lib/data.js"></script>
+  <script type="text/javascript" src="./lib/scripts.js"></script>
+</body>
+</html>

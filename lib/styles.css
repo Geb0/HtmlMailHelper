@@ -1,0 +1,282 @@
+/*
+ * lib/styles.css
+ *
+ * Styles for HTML Mail Helper - Version 1.0
+ *
+ * Copyright © 2025, philippe@croue.com,
+ * all rights reserved under MIT licence.
+ * See LICENCE file for more informations.
+ */
+
+:root {
+
+  --body-background-color: white;
+  --body-color: #202020;
+
+  --toolbar-color: #f0f0f0;
+  --toolbar-background-color: black;
+  --toolbar-border-color: gray;
+  --toolbar-field-color: #202020;
+  --toolbar-field-background-color: white;
+  --toolbar-field-border: 1px solid gray;
+
+  --item-width: 360px;
+  --item-hmargin: 1rem;
+  --items-animation-duration: 0.5s;
+
+  --item-family-font: normal normal bold 1rem sans;
+  --item-family-color: darkblue;
+  --item-title-font: normal normal normal 1rem sans;
+  --item-title-color: darkred;
+  --item-text-font: normal normal normal 0.8rem sans;
+  --item-text-color: var(--body-color);
+
+  --result-color: #f0f0f0;
+  --result-background-color: black;
+  --result-border-color: gray;
+  --result-phrase-hover-background-color: #202020;
+  --result-phrase-hover-color: yellow;
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+HTML, BODY {
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 1rem;
+}
+BODY {
+  overflow-x: none;
+  overflow-y: auto;
+}
+#root {
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 9rem; /* Top toolbar height */
+  padding-bottom: 16rem; /* Bottom result height */
+  color: var(--body-color);
+  background-color: var(--body-background-color);
+}
+
+/* Toolbar */
+
+TOOLS {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  color: var(--toolbar-color);
+  background-color: var(--toolbar-background-color);
+  border: none;
+  border-bottom: 1px solid var(--toolbar-border-color);
+  box-shadow: 0 0 1rem 0.2rem var(--toolbar-border-color);
+  z-index: 2000;
+}
+LOGO, RESET {
+  display: inline-block;
+  position: fixed;
+  cursor: pointer;
+}
+LOGO {
+  top: 1rem;
+  left: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+RESET {
+  top: 0.5rem;
+  right: 0.5rem;
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+}
+TOOLS > LINE {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin: 0;
+  padding: 0 2rem;
+  width: 100%;
+  height: 100%;
+}
+TOOLS > LINE:not(:last-child) {
+  margin-bottom: 1rem;
+}
+TOOLS > LINE > DIV {
+  flex-grow: 1;
+}
+TOOLS > LINE > DIV {
+margin: 0.25rem;
+}
+
+TOOLS > LINE > DIV > #order,
+TOOLS > LINE > DIV > #email,
+TOOLS > LINE > DIV > #civility,
+TOOLS > LINE > DIV > #firstname,
+TOOLS > LINE > DIV > #lastname,
+TOOLS > LINE > DIV > #category,
+TOOLS > LINE > DIV > #family,
+TOOLS > LINE > DIV > #search {
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+  height: 2rem;
+  color: var(--toolbar-field-color);
+  background-color: var(--toolbar-field-background-color);
+  border: var(--toolbar-field-border);
+  border-radius: 0.35rem;
+  font-size: 1rem;
+}
+
+TOOLS > LINE > DIV > #civility option:default{
+  color: red;
+}
+
+/* Category and items list */
+
+CATEGORY {
+  display: block;
+  text-align: left;
+}
+CATEGORY > H2 {
+  margin: 0 0 1rem 1rem;
+}
+LIST {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: stretch;
+}
+CONTENT {
+  display: inline-block;
+  flex-grow: 1;
+  max-width: 100vw;
+}
+ITEMS {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw - 2rem;
+  white-space: nowrap;
+}
+
+
+/* Item */
+
+ITEM {
+  display: inline-block;
+  margin: 0 var(--item-hmargin) 1rem var(--item-hmargin);
+  padding: 0.25rem 0.5rem;
+  overflow: hidden;
+  min-width: var(--item-width);
+  width: var(--item-width);
+  background-color: white;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.75rem;
+  border: 1px solid gray;
+  vertical-align: top;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+  box-shadow: 0.2rem 0.2rem 0.75rem gray;
+  white-space: normal;
+}
+ITEM:HOVER {
+  transform: scale(1.05);
+}
+ITEM > HEADER {
+  display: block;
+  padding: 0.25rem 0.25rem 0 0.25rem;
+  font-size: 0.9rem;
+}
+ITEM > HEADER > FAMILY {
+  display: inline;
+  color: var(--item-family-color);
+  font: var(--item-family-font);
+}
+ITEM > HEADER > TITLE {
+  display: inline;
+  color: var(--item-title-color);
+  font: var(--item-title-font);
+}
+
+ITEM > TEXT {
+  display: block;
+  padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+  color: var(--item-text-color);
+  font: var(--item-text-font);
+}
+RESULT {
+  display: inline-block;
+  position: fixed;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  color: var(--result-color);
+  background-color: var(--result-background-color);
+  border: none;
+  border-top: 1px solid var(--result-border-color);
+  box-shadow: 0 0 1rem 0.2rem var(--result-border-color);
+}
+RESULT CONTENT {
+  display: inline-block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: 10rem;
+  max-height: 10rem;
+}
+RESULT COPY, RESULT ERASE {
+  display: inline-block;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+RESULT COPY {
+  float: left;
+  color: lightgreen;
+}
+RESULT ERASE {
+  float: right;
+  color: red;
+}
+RESULT CONTENT PHRASE {
+  display: block;
+  position: relative;
+  padding: 0.25rem 4rem 0.25rem 0;
+  font-size: 0.9rem;
+}
+RESULT CONTENT PHRASE:HOVER {
+  background-color: var(--result-phrase-hover-background-color);
+  color: var(--result-phrase-hover-color);
+}
+
+RESULT CONTENT PHRASE UP,
+RESULT CONTENT PHRASE ERASE {
+  display: inline;
+  position: absolute;
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+RESULT CONTENT PHRASE UP {
+  right: 1.5rem;
+  font-size: 1rem;
+}
+RESULT CONTENT PHRASE ERASE {
+  right: 0;
+  font-size: 1.25rem;
+}
