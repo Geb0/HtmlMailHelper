@@ -49,7 +49,7 @@ Just open `index.html` in your favorite web browser.
 
 ## Thanks
 
-Thanks to [FlatIcon and Freepik](https://www.flaticon.com/free-icon/letter_1027530) for application icon.
+Thanks to [FlatIcon and Freepik](https://www.flaticon.com/free-icon/letter_1027530) for application icon base.
 
 ## License
 
@@ -114,7 +114,7 @@ Ouvrir simplement `index.html` dans un navigateur internet.
 
 ## Remerciements
 
-Merci à [FlatIcon et Freepik](https://www.flaticon.com/free-icon/letter_1027530) pour l'icône de l'application.
+Merci à [FlatIcon et Freepik](https://www.flaticon.com/free-icon/letter_1027530) pour la base de l'icône de l'application.
 
 ## Licence
 
